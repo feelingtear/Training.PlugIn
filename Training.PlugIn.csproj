@@ -40,12 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill\TestPlugIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppService\" />
     <Folder Include="BillList\" />
-    <Folder Include="Bill\" />
     <Folder Include="BusinessFlow\" />
     <Folder Include="Common\" />
     <Folder Include="DynamicForm\" />

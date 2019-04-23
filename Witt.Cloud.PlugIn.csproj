@@ -56,6 +56,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.BOS.ServiceHelper.dll</HintPath>
     </Reference>
+    <Reference Include="Kingdee.K3.SCM.Contracts, Version=7.2.960.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.K3.SCM.Contracts.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\SVN\MicroService\trunk\Test\Host\Kingdee.BOS.MicroService.WebApiHostTests\bin\Debug\Newtonsoft.Json.dll</HintPath>
@@ -72,6 +76,7 @@
     <Compile Include="AppService\PurOrderSaveServicePlugIn.cs" />
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
+    <Compile Include="BusinessFlow\PurWriteBackPlugIn.cs" />
     <Compile Include="DynamicForm\EntityClickPlugIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\CrossReportPlugin.cs" />

@@ -52,9 +52,21 @@
     <Reference Include="Kingdee.BOS.Model">
       <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.BOS.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Kingdee.BOS.ServiceFacade.KDServiceClient, Version=7.2.960.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.BOS.ServiceFacade.KDServiceClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Kingdee.BOS.ServiceFacade.KDServiceFx, Version=7.2.960.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.BOS.ServiceFacade.KDServiceFx.dll</HintPath>
+    </Reference>
     <Reference Include="Kingdee.BOS.ServiceHelper, Version=7.2.960.7, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.BOS.ServiceHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Kingdee.BOS.WebApi.ServicesStub, Version=7.2.960.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Kingdee\K3Cloud\WebSite\bin\Kingdee.BOS.WebApi.ServicesStub.dll</HintPath>
     </Reference>
     <Reference Include="Kingdee.K3.SCM.Contracts, Version=7.2.960.7, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -81,11 +93,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\CrossReportPlugin.cs" />
     <Compile Include="Report\DemoMoveReportPlugIn.cs" />
+    <Compile Include="Report\FirstSimpleReportPlugIn.cs" />
     <Compile Include="Report\SimReportPluginDemo.cs" />
     <Compile Include="Validators\CheckCountValidator.cs" />
+    <Compile Include="WebApi\CustomBusinessService .cs" />
+    <Compile Include="WebApi\InvokeHelper.cs" />
+    <Compile Include="WebApi\WebApiClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BillList\" />
+    <Folder Include="ClentProxy\" />
     <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,25 @@
+﻿use dbname;
+
+--查询采购订单的SQL语句
+select t0.FID, t1.FENTRYID
+      ,t0.FBILLNO
+      ,t0.FDate
+      ,t0.FDOCUMENTSTATUS
+      ,t2.FLOCALCURRID
+      ,ISNULL(t20.FPRICEDIGITS,4) AS FPRICEDIGITS
+      ,ISNULL(t20.FAMOUNTDIGITS,2) AS FAMOUNTDIGITS
+      ,t1.FMATERIALID
+      ,t1M_L.FNAME as FMaterialName
+      ,t1.FQTY
+      ,t1f.FTAXPRICE
+      ,t1f.FALLAMOUNT
+       ,t1f.FDISCOUNTRATE   
+       ,t1f.FTAXRATE 
+ from T_PUR_POORDER t0
+inner join T_PUR_POORDERFIN t2 on (t0.FID = t2.FID)
+ left join T_BD_CURRENCY t20 on (t2.FLOCALCURRID = t20.FCURRENCYID)
+inner join T_PUR_POORDERENTRY t1 on (t0.FID = t1.FID)
+ left join T_BD_MATERIAL_L t1M_L on (t1.FMATERIALID = t1m_l.FMATERIALID and t1M_L.FLOCALEID = 2052)
+inner join T_PUR_POORDERENTRY_F t1F on (t1.FENTRYID = t1f.FENTRYID)
+ where CONVERT(varchar(6),t0.FDATE,112)='201904';
+

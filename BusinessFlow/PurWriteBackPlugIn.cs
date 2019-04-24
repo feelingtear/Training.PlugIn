@@ -30,7 +30,7 @@ namespace Witt.Cloud.PlugIn.BusinessFlow
 
         public override void BeforeCheckHighLimit(BeforeCheckHighLimitEventArgs e)
         {
-            if (this._thisIsMyRule == true)
+            if (_thisIsMyRule == true)
             {
                 //采购管理系统参数
                 ICommonService service = ServiceHelper.GetService<ICommonService>();

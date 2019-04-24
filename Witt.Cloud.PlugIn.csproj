@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CloudPack\深圳201904.zip" />
+    <None Include="Tools\K3Server_v1.1.zip" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

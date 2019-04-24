@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Kingdee.BOS.Core.Report.PlugIn;
+﻿using System.Collections.Generic;
 using Kingdee.BOS.Core.Report;
 using System.Data;
 using Kingdee.BOS.App.Data;
 using Kingdee.BOS.Contracts.Report;
-using Kingdee.BOS.Util;
-using static Kingdee.BOS.Core.Enums.BOSEnums;
 using Kingdee.BOS;
 using System.ComponentModel;
 
@@ -47,7 +41,7 @@ namespace Witt.Cloud.PlugIn.Report
         public override List<SummaryField> GetSummaryColumnInfo(IRptParams filter)
         {
             List<SummaryField> fls = new List<SummaryField>();
-            SummaryField fs = new SummaryField("FSEQ", Enu_SummaryType.SUM);
+            SummaryField fs = new SummaryField("FSEQ", Kingdee.BOS.Core.Enums.BOSEnums.Enu_SummaryType.SUM);
             fls.Add(fs);
             return fls;
         }

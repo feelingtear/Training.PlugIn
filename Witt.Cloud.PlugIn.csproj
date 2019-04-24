@@ -92,6 +92,8 @@
     <Content Include="SQLScript\Demo.sql" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CloudPack\meta\单据体连动\ke2a80d6b3ed142689e08b4367af6c779.2052.dymx" />
+    <None Include="CloudPack\meta\单据体连动\ke2a80d6b3ed142689e08b4367af6c779.dym" />
     <None Include="CloudPack\深圳201904.zip" />
     <None Include="Tools\K3Server_v1.1.zip" />
   </ItemGroup>

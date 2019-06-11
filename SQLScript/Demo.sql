@@ -1,4 +1,4 @@
-﻿use dbname;
+﻿use AIS20180516092047;
 
 --查询采购订单的SQL语句
 select t0.FID, t1.FENTRYID
@@ -22,4 +22,8 @@ inner join T_PUR_POORDERENTRY t1 on (t0.FID = t1.FID)
  left join T_BD_MATERIAL_L t1M_L on (t1.FMATERIALID = t1m_l.FMATERIALID and t1M_L.FLOCALEID = 2052)
 inner join T_PUR_POORDERENTRY_F t1F on (t1.FENTRYID = t1f.FENTRYID)
  where CONVERT(varchar(6),t0.FDATE,112)='201904';
+
+
+ select * from T_BF_WRITEBACKRULE;
+ select * from T_BF_WRITEBACKRULE_L;
 

@@ -20,6 +20,7 @@ namespace Witt.Cloud.PlugIn.AppService
     [Description("采购订单保存服务插件demo")]
     public class PurOrderSaveServicePlugIn : AbstractOperationServicePlugIn
     {
+        
         public override void OnPreparePropertys(PreparePropertysEventArgs e)
         {
             base.OnPreparePropertys(e);

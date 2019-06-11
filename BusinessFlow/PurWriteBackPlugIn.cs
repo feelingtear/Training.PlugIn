@@ -16,7 +16,7 @@ namespace Witt.Cloud.PlugIn.BusinessFlow
     public class PurWriteBackPlugIn : AbstractBusinessFlowServicePlugIn
     {
         private bool _thisIsMyRule = false;
-        private const string MyRuleId = "9d1a8ba0-a533-4c04-9b19-11cf3c599ac7";
+        private const string MyRuleId = "568ccfe2-6cb9-4276-9bf6-11c5eee8c3de";
 
         public override void BeforeWriteBack(BeforeWriteBackEventArgs e)
         {

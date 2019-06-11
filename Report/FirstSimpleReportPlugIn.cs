@@ -74,7 +74,7 @@ namespace Witt.Cloud.PlugIn.Report
         public override ReportHeader GetReportHeaders(IRptParams filter)
         {
             // FID, FEntryId, 编号、状态、物料、数量、单位、单位精度、单价、价税合计
-            ReportHeader header = new ReportHeader();
+            ReportHeader header = base.GetReportHeaders(filter);
             // 编号
             var dateHeader = header.AddChild("FDate", new LocaleValue("日期"));
             dateHeader.ColIndex = 0;

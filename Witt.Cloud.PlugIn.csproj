@@ -78,6 +78,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppService\PurOrderSaveServicePlugIn.cs" />
+    <Compile Include="AppService\PurOrderServTest.cs" />
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
     <Compile Include="BusinessFlow\PurWriteBackPlugIn.cs" />
@@ -96,14 +98,12 @@
     <Compile Include="Report\FirstSimpleReportPlugIn.cs" />
     <Compile Include="Report\SimReportPluginDemo.cs" />
     <Compile Include="Validators\CheckCountValidator.cs" />
-    <Compile Include="WebApi\CustomBusinessService .cs" />
-    <Compile Include="WebApi\InvokeHelper.cs" />
-    <Compile Include="WebApi\WebApiClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BillList\" />
     <Folder Include="ClentProxy\" />
     <Folder Include="Common\" />
+    <Folder Include="WebApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SQLScript\Demo.sql" />
@@ -112,6 +112,15 @@
     <None Include="CloudPack\meta\单据体连动\ke2a80d6b3ed142689e08b4367af6c779.2052.dymx" />
     <None Include="CloudPack\meta\单据体连动\ke2a80d6b3ed142689e08b4367af6c779.dym" />
     <None Include="CloudPack\深圳201904.zip" />
+    <None Include="doc\IDynamicFormModel接口调用示例代码.docx" />
+    <None Include="doc\IDynamicFormView接口使用示例代码.docx" />
+    <None Include="doc\动态表单插件示例代码.docx" />
+    <None Include="doc\单据列表插件示例代码.docx" />
+    <None Include="doc\单据维护插件示例代码.docx" />
+    <None Include="doc\单据转换插件示例代码.docx" />
+    <None Include="doc\反写插件示例代码.docx" />
+    <None Include="doc\操作插件示例代码.docx" />
+    <None Include="doc\账表服务取数插件示例代码.docx" />
     <None Include="Tools\K3Server_v1.1.zip" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,7 +34,6 @@ namespace Witt.Cloud.PlugIn.Report
                     where FISDEFAULT={2}";
             KSQL_SEQ = string.Format(KSQL_SEQ, "FISDEFAULT");
             sSQL = string.Format(sSQL, this.KSQL_SEQ, tableName, dr["FISDEFAULT"].ToString());
-
             DBUtils.Execute(this.Context, sSQL);
         }
 

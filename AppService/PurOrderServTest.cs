@@ -55,7 +55,7 @@ namespace Witt.Cloud.PlugIn.AppService
                 new SqlParam("@Name",KDDbType.String,"AfterExecuteOperationTransaction"),
                 new SqlParam("@CREATEDATE",KDDbType.DateTime,DateTime.Now)
             };
-
+            DBUtils.ExecuteStoreProcedure
             DBUtils.Execute(this.Context, strSql, paras);
         }
 
@@ -74,6 +74,11 @@ namespace Witt.Cloud.PlugIn.AppService
             strSql = "TRUNCATE table T_DEMO_PURDDLTest";
             DBUtils.Execute(this.Context, strSql);
             throw new Exception("测试服务插件抛出异常");
+        }
+
+        public override void RollbackData(OperationRollbackDataArgs e)
+        {
+            base.RollbackData(e);
         }
     }
 }

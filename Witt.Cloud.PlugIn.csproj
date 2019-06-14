@@ -86,9 +86,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppService\BillUniqueSerPlugIn.cs" />
+    <Compile Include="AppService\PurCheckAmountServPlugIn.cs" />
     <Compile Include="AppService\PurOrderSaveServicePlugIn.cs" />
     <Compile Include="AppService\PurOrderServTest.cs" />
+    <Compile Include="AppService\ServDemoPlugIn.cs" />
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
+    <Compile Include="Bill\PurOperPlugIn.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
     <Compile Include="BusinessFlow\PurWriteBackPlugIn.cs" />
     <Compile Include="DynamicForm\EntityClickPlugIn.cs" />
@@ -97,6 +101,7 @@
     <Compile Include="Report\DemoMoveReportPlugIn.cs" />
     <Compile Include="Report\FirstSimpleReportPlugIn.cs" />
     <Compile Include="Report\SimReportPluginDemo.cs" />
+    <Compile Include="Validators\CheckAmountValidator.cs" />
     <Compile Include="Validators\CheckCountValidator.cs" />
   </ItemGroup>
   <ItemGroup>

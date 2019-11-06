@@ -1,16 +1,10 @@
 ﻿using Kingdee.BOS.App;
-using Kingdee.BOS.App.Core.Validation;
 using Kingdee.BOS.Contracts;
-using Kingdee.BOS.Core.DynamicForm;
 using Kingdee.BOS.Core.DynamicForm.PlugIn;
 using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
 using Kingdee.BOS.Core.Log;
 using Kingdee.BOS.Util;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using Witt.Cloud.PlugIn.Validators;
 
 namespace Witt.Cloud.PlugIn.AppService
@@ -20,7 +14,7 @@ namespace Witt.Cloud.PlugIn.AppService
     [Description("采购订单保存服务插件demo")]
     public class PurOrderSaveServicePlugIn : AbstractOperationServicePlugIn
     {
-        
+
         public override void OnPreparePropertys(PreparePropertysEventArgs e)
         {
             base.OnPreparePropertys(e);
@@ -51,9 +45,12 @@ namespace Witt.Cloud.PlugIn.AppService
 
         public override void OnAddValidators(AddValidatorsEventArgs e)
         {
+
             base.OnAddValidators(e);
-            var validator = new CheckCountValidator();
-            validator.EntityKey = "FPOOrderEntry";
+            CheckCountValidator validator = new CheckCountValidator
+            {
+                EntityKey = "FPOOrderEntry"
+            };
             e.Validators.Add(validator);
         }
     }

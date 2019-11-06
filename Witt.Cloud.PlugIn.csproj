@@ -87,11 +87,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppService\BillUniqueSerPlugIn.cs" />
+    <Compile Include="AppService\KDExceptionServPlugIn.cs" />
     <Compile Include="AppService\PurCheckAmountServPlugIn.cs" />
     <Compile Include="AppService\PurOrderSaveServicePlugIn.cs" />
     <Compile Include="AppService\PurOrderServTest.cs" />
     <Compile Include="AppService\ServDemoPlugIn.cs" />
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
+    <Compile Include="Bill\LoadSavePlugIn.cs" />
     <Compile Include="Bill\PurOperPlugIn.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
     <Compile Include="BusinessFlow\PurWriteBackPlugIn.cs" />

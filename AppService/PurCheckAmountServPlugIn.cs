@@ -1,4 +1,5 @@
-﻿using Kingdee.BOS.Core.DynamicForm.PlugIn;
+﻿using Kingdee.BOS.App.Data;
+using Kingdee.BOS.Core.DynamicForm.PlugIn;
 using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,13 @@ namespace Witt.Cloud.PlugIn.AppService
 
         public override void EndOperationTransaction(EndOperationTransactionArgs e)
         {
+            var ds = DBUtils.ExecuteDataSet(this.Context,"exec p_test 1");
+
+            //DBUtils.ExecuteStoreProcedure()
+
             base.EndOperationTransaction(e);
 
-            if(e.DataEntitys.Length>0)
+            if (e.DataEntitys.Length > 0)
             {
                 var dataObj = e.DataEntitys[0];
 

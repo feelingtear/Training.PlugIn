@@ -33,7 +33,6 @@ namespace Witt.Cloud.PlugIn.AppService
                 new SqlParam("@ID",KDDbType.Int32,id),
             };
 
-
             var count = DBUtils.ExecuteEnumerable(this.Context, strSql, System.Data.CommandType.Text, sqlParams).Count();
 
 
@@ -41,6 +40,11 @@ namespace Witt.Cloud.PlugIn.AppService
             {
                 throw new Exception("单据编号存在重复！");
             }
+        }
+
+        public override void AfterExecuteOperationTransaction(AfterExecuteOperationTransaction e)
+        {
+            base.AfterExecuteOperationTransaction(e);
         }
     }
 }

@@ -61,7 +61,7 @@ namespace Witt.Cloud.PlugIn.Validators
                                  et.RowIndex,
                                  "E1",
                                 string.Format("本月的价税合计已经超过十万，禁止保存，当前价税合计为:{0}", allAmount),
-                                  "价税合计超额检查"));
+                                  "价税合计超额检查",ErrorLevel.Warning));
                         }
                     }
                 }

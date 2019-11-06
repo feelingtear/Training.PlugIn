@@ -55,7 +55,6 @@ namespace Witt.Cloud.PlugIn.AppService
                 new SqlParam("@Name",KDDbType.String,"AfterExecuteOperationTransaction"),
                 new SqlParam("@CREATEDATE",KDDbType.DateTime,DateTime.Now)
             };
-            DBUtils.ExecuteStoreProcedure
             DBUtils.Execute(this.Context, strSql, paras);
         }
 

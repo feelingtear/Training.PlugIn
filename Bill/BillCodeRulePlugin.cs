@@ -1,6 +1,7 @@
 ﻿using Kingdee.BOS.App.Core;
 using Kingdee.BOS.Core.Bill.PlugIn;
 using Kingdee.BOS.Core.Bill.PlugIn.Args;
+using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
 using Kingdee.BOS.Orm.DataEntity;
 using System.ComponentModel;
 
@@ -9,6 +10,11 @@ namespace GalaxyPlugin.Bill
     [Description("按照不同编码规则生成编号插件")]
     public class BillCodeRulePlugin : AbstractBillPlugIn
     {
+
+        public override void BeforeSetItemValueByNumber(BeforeSetItemValueByNumberArgs e)
+        {
+            base.BeforeSetItemValueByNumber(e);
+        }
         public override void BeforeSave(BeforeSaveEventArgs e)
         {
             base.BeforeSave(e);
@@ -23,14 +29,19 @@ namespace GalaxyPlugin.Bill
                 {
                     //满足特定分组使用自定义编码规则生成单据编号
                     GenerateBillNoById();
+                    Test();
                 }
             }
+        }
+
+        public void Test()
+        {
+            return;
         }
 
 
         private void GenerateBillNoById()
         {
-
             /*
              * 通过下面语句查询到FRULEID的值，得到 FRULEID=5c48033be79374
              * select * from T_BAS_BILLCODERULE_L t where t.fname ='插件调用编码规则';             

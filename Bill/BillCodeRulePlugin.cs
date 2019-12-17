@@ -42,14 +42,17 @@ namespace GalaxyPlugin.Bill
 
         private void GenerateBillNoById()
         {
+            BusinessDataService dataService = new BusinessDataService();
+            var businInfo = View.BillBusinessInfo;
+            var dataObjs = new DynamicObject[] { this.Model.DataObject };
+            string repairBillNo = dataService.GetNextBillNoByRepair(Context, businInfo, dataObjs, string.Empty, null);
+            this.Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
+
             /*
              * 通过下面语句查询到FRULEID的值，得到 FRULEID=5c48033be79374
              * select * from T_BAS_BILLCODERULE_L t where t.fname ='插件调用编码规则';             
              */
 
-            BusinessDataService dataService = new BusinessDataService();
-            var businInfo = View.BillBusinessInfo;
-            var dataObjs = new DynamicObject[] { this.Model.DataObject };
             bool isUpdateMax = true;
             const string specifiedRuleId = "5c48033be79374";
             var billNoList = dataService.GetBillNo(Context, businInfo, dataObjs, isUpdateMax, specifiedRuleId);

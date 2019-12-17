@@ -45,7 +45,6 @@ namespace Witt.Cloud.PlugIn.AppService
 
         public override void OnAddValidators(AddValidatorsEventArgs e)
         {
-
             base.OnAddValidators(e);
             CheckCountValidator validator = new CheckCountValidator
             {

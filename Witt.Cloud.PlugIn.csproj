@@ -92,7 +92,9 @@
     <Compile Include="AppService\PurOrderSaveServicePlugIn.cs" />
     <Compile Include="AppService\PurOrderServTest.cs" />
     <Compile Include="AppService\ServDemoPlugIn.cs" />
+    <Compile Include="BillList\AutoRefreshListPlugIn.cs" />
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
+    <Compile Include="Bill\HiddenTabPlugIn.cs" />
     <Compile Include="Bill\LoadSavePlugIn.cs" />
     <Compile Include="Bill\PurOperPlugIn.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
@@ -107,7 +109,6 @@
     <Compile Include="Validators\CheckCountValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BillList\" />
     <Folder Include="ClentProxy\" />
     <Folder Include="Common\" />
     <Folder Include="WebApi\" />

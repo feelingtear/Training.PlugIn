@@ -18,6 +18,11 @@ namespace Witt.Cloud.PlugIn.Bill
 
         }
 
+        public override void EntityRowDoubleClick(EntityRowClickEventArgs e)
+        {
+            base.EntityRowDoubleClick(e);
+        }
+
         public override void DataChanged(DataChangedEventArgs e)
         {
             base.DataChanged(e);

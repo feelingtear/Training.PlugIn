@@ -20,11 +20,11 @@ namespace GalaxyPlugin.Bill
             base.BeforeSave(e);
 
             //获取物料分组是否是特定编码规则分组
-            var groupData = this.Model.DataObject["MaterialGroup"];
+            object groupData = Model.DataObject["MaterialGroup"];
             if (groupData != null && groupData is DynamicObject)
             {
                 const string specifiedGroupNum = "SpeCodeRule";
-                var groupNum = ((DynamicObject)groupData)["Number"];
+                object groupNum = ((DynamicObject)groupData)["Number"];
                 if (groupNum != null && groupNum.ToString().Equals(specifiedGroupNum))
                 {
                     //满足特定分组使用自定义编码规则生成单据编号
@@ -43,10 +43,10 @@ namespace GalaxyPlugin.Bill
         private void GenerateBillNoById()
         {
             BusinessDataService dataService = new BusinessDataService();
-            var businInfo = View.BillBusinessInfo;
-            var dataObjs = new DynamicObject[] { this.Model.DataObject };
+            Kingdee.BOS.Core.Metadata.BusinessInfo businInfo = View.BillBusinessInfo;
+            DynamicObject[] dataObjs = new DynamicObject[] { Model.DataObject };
             string repairBillNo = dataService.GetNextBillNoByRepair(Context, businInfo, dataObjs, string.Empty, null);
-            this.Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
+            Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
 
             /*
              * 通过下面语句查询到FRULEID的值，得到 FRULEID=5c48033be79374
@@ -55,9 +55,9 @@ namespace GalaxyPlugin.Bill
 
             bool isUpdateMax = true;
             const string specifiedRuleId = "5c48033be79374";
-            var billNoList = dataService.GetBillNo(Context, businInfo, dataObjs, isUpdateMax, specifiedRuleId);
+            System.Collections.Generic.List<Kingdee.BOS.Core.Metadata.FormElement.BillNoInfo> billNoList = dataService.GetBillNo(Context, businInfo, dataObjs, isUpdateMax, specifiedRuleId);
 
-            this.Model.SetValue(businInfo.GetBillNoField().Key, billNoList[0].BillNo);
+            Model.SetValue(businInfo.GetBillNoField().Key, billNoList[0].BillNo);
         }
     }
 }

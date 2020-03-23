@@ -1,6 +1,7 @@
 ﻿using Kingdee.BOS.Core.Const;
 using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
 using Kingdee.BOS.Core.List.PlugIn;
+using Kingdee.BOS.Core.List.PlugIn.Args;
 using Kingdee.BOS.JSON;
 using Kingdee.BOS.Util;
 using System;
@@ -20,6 +21,8 @@ namespace Witt.Cloud.PlugIn.BillList
             base.AfterBindData(e);
             KeepAlive();
         }
+
+        
 
         public void KeepAlive()
         {

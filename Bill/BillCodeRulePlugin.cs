@@ -45,6 +45,7 @@ namespace GalaxyPlugin.Bill
             BusinessDataService dataService = new BusinessDataService();
             Kingdee.BOS.Core.Metadata.BusinessInfo businInfo = View.BillBusinessInfo;
             DynamicObject[] dataObjs = new DynamicObject[] { Model.DataObject };
+
             string repairBillNo = dataService.GetNextBillNoByRepair(Context, businInfo, dataObjs, string.Empty, null);
             Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
 

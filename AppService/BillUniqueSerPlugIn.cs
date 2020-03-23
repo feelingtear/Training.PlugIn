@@ -1,4 +1,5 @@
 ﻿using Kingdee.BOS;
+using Kingdee.BOS.App.Core.BillCodeRule;
 using Kingdee.BOS.App.Data;
 using Kingdee.BOS.Core.DynamicForm.PlugIn;
 using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;

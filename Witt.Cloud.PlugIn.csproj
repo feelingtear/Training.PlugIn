@@ -96,6 +96,7 @@
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
     <Compile Include="Bill\HiddenTabPlugIn.cs" />
     <Compile Include="Bill\LoadSavePlugIn.cs" />
+    <Compile Include="Bill\PayRequiredPlugIn.cs" />
     <Compile Include="Bill\PurOperPlugIn.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
     <Compile Include="BusinessFlow\PurWriteBackPlugIn.cs" />

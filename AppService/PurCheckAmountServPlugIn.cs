@@ -34,6 +34,11 @@ namespace Witt.Cloud.PlugIn.AppService
 
                 dataObj["Date"] = new DateTime(2012, 1, 1);
             }
+
+            this.OperationResult.OperateResult.Add(new Kingdee.BOS.Core.DynamicForm.OperateResult()
+            {
+                 MessageType = Kingdee.BOS.Core.DynamicForm.MessageType.FatalError
+            });
         }
 
         public override void OnAddValidators(AddValidatorsEventArgs e)

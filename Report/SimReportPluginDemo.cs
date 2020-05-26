@@ -20,15 +20,10 @@ using Kingdee.BOS.Orm.DataEntity;
     /// <summary>
     /// 自定义简单账表：服务端插件
     /// </summary>
-    /// <remarks>
-    /// 开发目的：用以学习简单账表插件的各种事件、属性
-    /// </remarks>
     [HotUpdate]
     [Description("简单账表测试Demo,包含过滤页面条件")]
     public class SimReportPluginDemo : SysReportBaseService
     {
-       
-
         public override void Initialize()
         {
             base.Initialize();

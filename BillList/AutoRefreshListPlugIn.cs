@@ -3,6 +3,7 @@ using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
 using Kingdee.BOS.Core.List.PlugIn;
 using Kingdee.BOS.Core.List.PlugIn.Args;
 using Kingdee.BOS.JSON;
+using Kingdee.BOS.Model.List;
 using Kingdee.BOS.Util;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,14 @@ namespace Witt.Cloud.PlugIn.BillList
             KeepAlive();
         }
 
-        
+
+        public override void PrepareFilterParameter(FilterArgs e)
+        {
+            base.PrepareFilterParameter(e);
+
+           var str= this.ListModel.FilterParameter.QuickFilterString;
+        }
+
 
         public void KeepAlive()
         {

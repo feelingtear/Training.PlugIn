@@ -1,4 +1,5 @@
 ﻿using Kingdee.BOS.App.Core;
+using Kingdee.BOS.Core.Bill;
 using Kingdee.BOS.Core.Bill.PlugIn;
 using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
 using Kingdee.BOS.Core.Metadata;
@@ -19,6 +20,16 @@ namespace Witt.Cloud.PlugIn.Bill
             LoadSample();
         }
 
+        public override void AfterShowForm(AfterShowFormEventArgs e)
+        {
+            base.AfterShowForm(e);
+        }
+
+
+        public override void BeforeUpdateValue(BeforeUpdateValueEventArgs e)
+        {
+            base.BeforeUpdateValue(e);
+        }
 
         private void LoadSample()
         {
@@ -37,6 +48,19 @@ namespace Witt.Cloud.PlugIn.Bill
 
             //保存数据
             BusinessDataServiceHelper.Save(this.Context, dataObj);
+        }
+
+        public override void PreOpenForm(PreOpenFormEventArgs e)
+        {
+            base.PreOpenForm(e);
+
+            var para =   e.OpenParameter as BillOpenParameter;
+            if(1==2)
+            {
+                para.DefaultBillTypeId = "123456";
+            }
+
+
         }
     }
 }

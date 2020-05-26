@@ -55,7 +55,7 @@ namespace Witt.Cloud.PlugIn.Report
         {
             DataTable dt;
             string sSQL = "select FISDEFAULT from T_BAS_FILTERSCHEME group by FISDEFAULT";
-            dt = DBUtils.ExecuteDataSet(this.Context, sSQL).Tables[0];
+            dt = DBUtils.ExecuteDataSet(Context, sSQL).Tables[0];
             return dt;
         }
 

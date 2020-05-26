@@ -85,7 +85,7 @@ namespace Witt.Cloud.PlugIn.Report
             field.FieldName = "FBILLNO";
             field.Name = new LocaleValue("单据编号");
             SettingField settingBillNo = PivotReportSettingInfo.CreateColumnSettingField(field, 0);
-            settingBillNo.IsShowTotal = false;
+            settingBillNo.IsShowTotal = true;
             this.SettingInfo.RowTitleFields.Add(settingBillNo);
             this.SettingInfo.SelectedFields.Add(settingBillNo);
 
@@ -96,6 +96,7 @@ namespace Witt.Cloud.PlugIn.Report
             SettingField settingCreateId = PivotReportSettingInfo.CreateColumnSettingField(field, 1);
             this.SettingInfo.RowTitleFields.Add(settingCreateId);
             this.SettingInfo.SelectedFields.Add(settingCreateId);
+            
 
             //构造行
             field = new TextField();
@@ -103,7 +104,7 @@ namespace Witt.Cloud.PlugIn.Report
             field.FieldName = "FMaterialName";
             field.Name = new LocaleValue("物料名称");
             SettingField settingMaterial = PivotReportSettingInfo.CreateColumnSettingField(field, 0);
-            settingMaterial.IsShowTotal = false;
+            settingMaterial.IsShowTotal = true;
             this.SettingInfo.ColTitleFields.Add(settingMaterial);
             this.SettingInfo.SelectedFields.Add(settingMaterial);
 

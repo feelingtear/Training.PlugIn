@@ -47,7 +47,7 @@ namespace Witt.Cloud.PlugIn.Report
                                       ,t0.FDate
                                       ,t0.FDOCUMENTSTATUS
                                       ,t2.FLOCALCURRID
-                                      ,ISNULL(t20.FPRICEDIGITS,4) AS FPRICEDIGITS
+                                  ,ISNULL(t20.FPRICEDIGITS,4) AS FPRICEDIGITS
                                       ,ISNULL(t20.FAMOUNTDIGITS,2) AS FAMOUNTDIGITS
                                       ,t1.FMATERIALID
                                       ,t1M_L.FNAME as FMaterialName
@@ -74,10 +74,11 @@ namespace Witt.Cloud.PlugIn.Report
         public override ReportHeader GetReportHeaders(IRptParams filter)
         {
             // FID, FEntryId, 编号、状态、物料、数量、单位、单位精度、单价、价税合计
-            ReportHeader header = base.GetReportHeaders(filter);
+            ReportHeader header = new ReportHeader();
             // 编号
             var dateHeader = header.AddChild("FDate", new LocaleValue("日期"));
             dateHeader.ColIndex = 0;
+            dateHeader.Width = 100;
             var status = header.AddChild("FDocumentStatus", new LocaleValue("状态"));
             status.ColIndex = 7;
             var billNo = header.AddChild("FBillNo", new LocaleValue("单据编号"));

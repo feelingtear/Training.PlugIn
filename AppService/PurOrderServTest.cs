@@ -31,19 +31,19 @@ namespace Witt.Cloud.PlugIn.AppService
         public override void BeginOperationTransaction(BeginOperationTransactionArgs e)
         {
             base.BeginOperationTransaction(e);
-            //using (KDTransactionScope scope = new KDTransactionScope(TransactionScopeOption.Required))
-            //{
-            string strSql = "INSERT INTO t_demo_purServTest(FID,FNAME,FCREATEDATE) VALUES(@ID,@NAME,@CREATEDATE)";
-            List<SqlParam> paras = new List<SqlParam> {
+            using (KDTransactionScope scope = new KDTransactionScope(TransactionScopeOption.Required))
+            {
+                string strSql = "INSERT INTO t_demo_purServTest(FID,FNAME,FCREATEDATE) VALUES(@ID,@NAME,@CREATEDATE)";
+                List<SqlParam> paras = new List<SqlParam> {
                 new SqlParam("@ID", KDDbType.Int32,DateTime.Now.Second),
                 new SqlParam("@Name",KDDbType.String,"BeginOperationTransaction"),
                 new SqlParam("@CREATEDATE",KDDbType.DateTime,DateTime.Now)
                 };
 
-            DBUtils.Execute(this.Context, strSql, paras);
-            //    scope.Complete();
-            //    throw new Exception("新建事务抛出异常");
-            //}
+                DBUtils.Execute(this.Context, strSql, paras);
+                scope.Complete();
+                throw new Exception("新建事务抛出异常");
+            }
         }
 
         public override void AfterExecuteOperationTransaction(AfterExecuteOperationTransaction e)
@@ -70,6 +70,7 @@ namespace Witt.Cloud.PlugIn.AppService
 
             DBUtils.Execute(this.Context, strSql, paras);
 
+            //oracle下truncate DDL操作导致提交事务
             strSql = "TRUNCATE table T_DEMO_PURDDLTest";
             DBUtils.Execute(this.Context, strSql);
             throw new Exception("测试服务插件抛出异常");

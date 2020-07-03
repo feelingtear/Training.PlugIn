@@ -100,6 +100,7 @@
     <Compile Include="Bill\LoadSavePlugIn.cs" />
     <Compile Include="Bill\PayRequiredPlugIn.cs" />
     <Compile Include="Bill\PurOperPlugIn.cs" />
+    <Compile Include="Bill\UpdateMaxNoPlugIn.cs" />
     <Compile Include="BusinessFlow\PurReqToOrderService.cs" />
     <Compile Include="BusinessFlow\PurWriteBackPlugIn.cs" />
     <Compile Include="DynamicForm\EntityClickPlugIn.cs" />

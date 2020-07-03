@@ -1,8 +1,13 @@
 ﻿using Kingdee.BOS.App.Core;
+using Kingdee.BOS.Core.Bill;
 using Kingdee.BOS.Core.Bill.PlugIn;
 using Kingdee.BOS.Core.Bill.PlugIn.Args;
 using Kingdee.BOS.Core.DynamicForm.PlugIn.Args;
+using Kingdee.BOS.Core.Metadata;
+using Kingdee.BOS.Core.Metadata.FormElement;
 using Kingdee.BOS.Orm.DataEntity;
+using Kingdee.BOS.ServiceHelper;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace GalaxyPlugin.Bill
@@ -39,6 +44,11 @@ namespace GalaxyPlugin.Bill
             return;
         }
 
+        public override void BeforeFlexSelect(BeforeFlexSelectEventArgs e)
+        {
+            base.BeforeFlexSelect(e);
+        }
+
 
         private void GenerateBillNoById()
         {
@@ -48,6 +58,16 @@ namespace GalaxyPlugin.Bill
 
             string repairBillNo = dataService.GetNextBillNoByRepair(Context, businInfo, dataObjs, string.Empty, null);
             Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
+
+            //var businInfo = this.View.BillBusinessInfo;
+
+            List<SelectorItemInfo> selector = new List<SelectorItemInfo>()
+            {
+                new SelectorItemInfo("Number")
+            };
+            OQLFilter filter = OQLFilter.CreateHeadEntityFilter(
+                string.Format("FUseOrgId = '1' and FForbidStatus = 'A'"));
+            var dataCollection =BusinessDataServiceHelper.Load(this.Context, businInfo, selector, filter);
 
             /*
              * 通过下面语句查询到FRULEID的值，得到 FRULEID=5c48033be79374
@@ -60,5 +80,18 @@ namespace GalaxyPlugin.Bill
 
             Model.SetValue(businInfo.GetBillNoField().Key, billNoList[0].BillNo);
         }
+
+        public override void EntityRowClick(EntityRowClickEventArgs e)
+        {
+            base.EntityRowClick(e);
+            
+        }
+
+        public override void EntityRowDoubleClick(EntityRowClickEventArgs e)
+        {
+            base.EntityRowDoubleClick(e);
+        }
+
+
     }
 }

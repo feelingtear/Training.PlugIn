@@ -6,6 +6,7 @@ using System.Text;
 using Kingdee.BOS;
 using Kingdee.BOS.App.Data;
 using Kingdee.BOS.Contracts.Report;
+using Kingdee.BOS.Core.Metadata.ControlElement;
 using Kingdee.BOS.Core.Report;
 using Kingdee.BOS.Util;
 
@@ -77,6 +78,7 @@ namespace Witt.Cloud.PlugIn.Report
             ReportHeader header = new ReportHeader();
             // 编号
             var dateHeader = header.AddChild("FDate", new LocaleValue("日期"));
+            dateHeader.TextAlign = ControlAppearance.TEXTALIGN_RIGHT;
             dateHeader.ColIndex = 0;
             dateHeader.Width = 100;
             var status = header.AddChild("FDocumentStatus", new LocaleValue("状态"));

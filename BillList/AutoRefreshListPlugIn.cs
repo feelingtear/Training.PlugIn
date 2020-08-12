@@ -23,26 +23,51 @@ namespace Witt.Cloud.PlugIn.BillList
             KeepAlive();
         }
 
+        
 
         public override void PrepareFilterParameter(FilterArgs e)
         {
             base.PrepareFilterParameter(e);
 
-           var str= this.ListModel.FilterParameter.QuickFilterString;
+        }
+
+        HashSet<string> entityIdSet = new HashSet<string>();
+        public override void FormatCellValue(FormatCellValueArgs args)
+        {
+            base.FormatCellValue(args);
+
+           var entityId =  args.DataRow["FEntityId"].ToString();
+            if(entityIdSet.Contains(entityId))
+            {
+                args.FormateValue = string.Empty;
+            }
+            else
+            {
+                entityIdSet.Add(entityId);
+            }
         }
 
 
         public void KeepAlive()
         {
-            JSONObject para = new JSONObject();
-            para["key"] = TestKey;
-            para["eventName"] = "CustomEvents";
+            JSONObject para = new JSONObject
+            {
+                ["key"] = TestKey,
+                ["eventName"] = "CustomEvents"
+            };
             var data = new JSONObject();
             para["data"] = data;
             data["refreshData"] = DateTime.Now;
             para["delay"] = "60000"; //每100s刷新一次
             this.View.AddAction(JSAction.FireCustomRequest, para);
         }
+
+        public override void BeforeClosed(BeforeClosedEventArgs e)
+        {
+            base.BeforeClosed(e);
+
+        }
+
 
         public override void CustomEvents(CustomEventsArgs e)
         {

@@ -94,7 +94,10 @@
     <Compile Include="AppService\ServDemoPlugIn.cs" />
     <Compile Include="BillList\AutoRefreshListPlugIn.cs" />
     <Compile Include="BillList\EntityRowClickPlugIn.cs" />
+    <Compile Include="BillList\MulBasePlugIn.cs" />
+    <Compile Include="BillList\PurchaseFomatPlugIn.cs" />
     <Compile Include="Bill\BillCodeRulePlugin.cs" />
+    <Compile Include="Bill\EntityExportPlugIn.cs" />
     <Compile Include="Bill\FlexLabelWidthPlugIn.cs" />
     <Compile Include="Bill\HiddenTabPlugIn.cs" />
     <Compile Include="Bill\LoadSavePlugIn.cs" />

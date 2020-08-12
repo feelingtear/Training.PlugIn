@@ -38,6 +38,8 @@ namespace GalaxyPlugin.Bill
                 }
             }
         }
+             
+
 
         public void Test()
         {
@@ -56,18 +58,18 @@ namespace GalaxyPlugin.Bill
             Kingdee.BOS.Core.Metadata.BusinessInfo businInfo = View.BillBusinessInfo;
             DynamicObject[] dataObjs = new DynamicObject[] { Model.DataObject };
 
-            string repairBillNo = dataService.GetNextBillNoByRepair(Context, businInfo, dataObjs, string.Empty, null);
-            Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
+            //string repairBillNo = dataService.GetNextBillNoByRepair(Context, businInfo, dataObjs, string.Empty, null);
+            //Model.SetValue(businInfo.GetBillNoField().Key, repairBillNo);
 
-            //var businInfo = this.View.BillBusinessInfo;
+            ////var businInfo = this.View.BillBusinessInfo;
 
-            List<SelectorItemInfo> selector = new List<SelectorItemInfo>()
-            {
-                new SelectorItemInfo("Number")
-            };
-            OQLFilter filter = OQLFilter.CreateHeadEntityFilter(
-                string.Format("FUseOrgId = '1' and FForbidStatus = 'A'"));
-            var dataCollection =BusinessDataServiceHelper.Load(this.Context, businInfo, selector, filter);
+            //List<SelectorItemInfo> selector = new List<SelectorItemInfo>()
+            //{
+            //    new SelectorItemInfo("Number")
+            //};
+            //OQLFilter filter = OQLFilter.CreateHeadEntityFilter(
+            //    string.Format("FUseOrgId = '1' and FForbidStatus = 'A'"));
+            //var dataCollection =BusinessDataServiceHelper.Load(this.Context, businInfo, selector, filter);
 
             /*
              * 通过下面语句查询到FRULEID的值，得到 FRULEID=5c48033be79374
@@ -76,7 +78,7 @@ namespace GalaxyPlugin.Bill
 
             bool isUpdateMax = true;
             const string specifiedRuleId = "5c48033be79374";
-            System.Collections.Generic.List<Kingdee.BOS.Core.Metadata.FormElement.BillNoInfo> billNoList = dataService.GetBillNo(Context, businInfo, dataObjs, isUpdateMax, specifiedRuleId);
+            List<Kingdee.BOS.Core.Metadata.FormElement.BillNoInfo> billNoList = dataService.GetBillNo(Context, businInfo, dataObjs, isUpdateMax, specifiedRuleId);
 
             Model.SetValue(businInfo.GetBillNoField().Key, billNoList[0].BillNo);
         }
